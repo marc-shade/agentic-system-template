@@ -10,10 +10,12 @@
 
 A ready-to-use template for building your own **agentic AI system** - an autonomous AI that:
 
-- Runs 24/7 with persistent memory across sessions
-- Manages goals and tasks that survive restarts
-- Learns and improves over time
-- Integrates with your existing tools via MCP servers
+- **Knows itself** - identity, capabilities, and limitations (self-awareness)
+- **Knows what's happening** - active context, tasks, and goals (situational awareness)
+- **Knows its environment** - platform, time, location (environmental awareness)
+- **Remembers everything** - 4-tier persistent memory across sessions
+- **Manages goals** - task tracking that survives restarts
+- **Learns and improves** - records outcomes, identifies gaps, optimizes over time
 
 **Philosophy**: This template embodies *Collaborative Intelligence* - AI that amplifies human capabilities rather than replacing them.
 
@@ -63,36 +65,36 @@ claude .
 
 | Component | Purpose |
 |-----------|---------|
+| **Awareness System** | Self, situational, and environmental awareness |
 | **Memory System** | 4-tier memory (working, episodic, semantic, procedural) |
 | **Goal Manager** | Persistent goals and task tracking |
-| **Session Continuity** | Pick up where you left off |
+| **Session Continuity** | Pick up where you left off with full context |
 | **Self-Improvement** | Learn from outcomes, optimize over time |
 
 ### MCP Servers (Pre-configured)
 
 | Server | Function |
 |--------|----------|
+| `awareness-mcp` | Identity, context, environment, metacognition |
 | `memory-mcp` | Persistent memory with versioning |
 | `goals-mcp` | Goal decomposition and task management |
-| `learning-mcp` | Experience recording and pattern extraction |
 
 ### Directory Structure
 
 ```
 my-agentic-system/
 ├── .claude/
-│   ├── CLAUDE.md           # System instructions (customize this!)
-│   └── settings.json       # Claude Code settings
+│   └── CLAUDE.md           # System instructions (customize this!)
 ├── mcp-servers/
-│   ├── memory-mcp/         # Memory system
-│   ├── goals-mcp/          # Goal management
-│   └── learning-mcp/       # Learning system
+│   ├── awareness-mcp/      # Self/situational/environmental awareness
+│   ├── memory-mcp/         # 4-tier memory system
+│   └── goals-mcp/          # Goal and task management
 ├── databases/
-│   └── (auto-created)      # Your persistent data
+│   └── agentic.db          # Your persistent data (auto-created)
 ├── scripts/
-│   ├── bootstrap.sh        # Initial setup
-│   └── health-check.sh     # System diagnostics
-├── llms.txt                # AI discovery file
+│   ├── health-check.sh     # System diagnostics
+│   └── ...
+├── bootstrap.sh            # Initial setup script
 └── README.md               # This file
 ```
 
@@ -162,6 +164,14 @@ See `docs/INTEGRATIONS.md` for guides.
 
 ## Core Concepts
 
+### Three Types of Awareness
+
+| Type | What It Knows | Example |
+|------|---------------|---------|
+| **Self-Awareness** | Identity, capabilities, limitations | "I'm a coding assistant. I can read files but can't browse the web." |
+| **Situational Awareness** | Active tasks, goals, conversation state | "We're working on Goal #3, task 2 of 5 is in progress." |
+| **Environmental Awareness** | Platform, time, location, resources | "Running on macOS, 2:30 PM local time, in ~/projects/." |
+
 ### Memory Tiers
 
 | Tier | Purpose | Duration |
@@ -181,10 +191,25 @@ Goal: "Build a REST API"
   └── Task: Write tests
 ```
 
+### Session Lifecycle
+
+```
+session_start()              ← Load identity, context, goals, gaps
+    │
+    ├── Work on tasks        ← Track progress, record outcomes
+    ├── Learn from actions   ← Store experiences in memory
+    ├── Identify gaps        ← Note what you don't know
+    │
+session_end()                ← Persist context for next time
+```
+
 ### Learning Loop
 
 ```
 Action → Outcome → Record → Pattern → Improve
+   ↓        ↓        ↓         ↓          ↓
+ Do it   Check   Store in   Extract   Apply next
+        result   memory    insights     time
 ```
 
 ---

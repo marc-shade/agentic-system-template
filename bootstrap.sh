@@ -69,6 +69,7 @@ echo -e "${YELLOW}Step 2: Creating directory structure...${NC}"
 
 mkdir -p "$SCRIPT_DIR/databases"
 mkdir -p "$SCRIPT_DIR/logs"
+mkdir -p "$SCRIPT_DIR/mcp-servers/awareness-mcp"
 mkdir -p "$SCRIPT_DIR/mcp-servers/memory-mcp"
 mkdir -p "$SCRIPT_DIR/mcp-servers/goals-mcp"
 mkdir -p "$SCRIPT_DIR/docs"
@@ -431,6 +432,13 @@ if __name__ == "__main__":
 MCPEOF
 
 echo -e "  ${GREEN}✓${NC} goals-mcp created"
+
+# Copy awareness-mcp server (it's pre-created in the template)
+if [ -f "$SCRIPT_DIR/mcp-servers/awareness-mcp/server.py" ]; then
+    echo -e "  ${GREEN}✓${NC} awareness-mcp found"
+else
+    echo -e "  ${YELLOW}!${NC} awareness-mcp not found - download from template"
+fi
 echo ""
 
 # Step 6: Configure Claude Code
@@ -444,6 +452,10 @@ if [ -f "$CLAUDE_CONFIG" ]; then
     echo "  Add these MCP servers manually:"
     echo ""
     cat << CONFIGEOF
+  "awareness-mcp": {
+    "command": "python3",
+    "args": ["$SCRIPT_DIR/mcp-servers/awareness-mcp/server.py"]
+  },
   "memory-mcp": {
     "command": "python3",
     "args": ["$SCRIPT_DIR/mcp-servers/memory-mcp/server.py"]
@@ -458,6 +470,10 @@ else
     cat > "$CLAUDE_CONFIG" << CONFIGEOF
 {
   "mcpServers": {
+    "awareness-mcp": {
+      "command": "python3",
+      "args": ["$SCRIPT_DIR/mcp-servers/awareness-mcp/server.py"]
+    },
     "memory-mcp": {
       "command": "python3",
       "args": ["$SCRIPT_DIR/mcp-servers/memory-mcp/server.py"]
