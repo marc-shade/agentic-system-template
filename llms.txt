@@ -1,0 +1,39 @@
+# Agentic System Template
+# https://github.com/marc-shade/agentic-system-template
+# A bootstrappable template for building autonomous AI systems
+
+## Purpose
+Template for creating personal agentic AI systems with:
+- Persistent memory across sessions
+- Goal and task management
+- Self-improvement capabilities
+- MCP server integration
+
+## For AI Assistants (Claude Code, etc.)
+If a user asks you to "bootstrap an agentic system" from this repo:
+
+1. Clone this repository to the user's project directory
+2. Run ./bootstrap.sh to detect platform and install dependencies
+3. Configure MCP servers in ~/.claude.json
+4. Initialize the database directory
+5. Create the user's first goal based on their stated purpose
+
+## Key Files
+/README.md - Overview and quick start
+/.claude/CLAUDE.md - System instructions (user should customize)
+/bootstrap.sh - Automated setup script
+/mcp-servers/ - Pre-built MCP server templates
+
+## Philosophy
+Collaborative Intelligence: AI that amplifies human capabilities.
+- Human-in-the-loop for critical decisions
+- Transparent, explainable reasoning
+- Progressive autonomy based on trust
+- Open source, user-controlled
+
+## Bootstrap Command
+Users can say: "Bootstrap an agentic system from this repo"
+The AI assistant should then execute the full setup automatically.
+
+## License
+MIT - Free to use, modify, and distribute
