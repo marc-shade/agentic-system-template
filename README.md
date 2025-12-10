@@ -1,11 +1,12 @@
 # Agentic System Template
+<img width="300" height="300" alt="Agentic System Template" src="https://github.com/user-attachments/assets/e32f02a8-c7ae-4a1a-a48a-5a72c5a96442" align="right" />
 
 **Bootstrap your own 24/7 autonomous AI system in minutes**
 
 [![Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-blueviolet)](https://claude.ai/code)
 [![License](https://img.shields.io/badge/License-MIT-blue)](LICENSE)
 
-## What Is This?
+**What Is This?**
 
 A ready-to-use template for building your own **agentic AI system** - an autonomous AI that:
 
