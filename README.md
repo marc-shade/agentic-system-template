@@ -160,6 +160,21 @@ The template supports easy integration with:
 
 See `docs/INTEGRATIONS.md` for guides.
 
+### 4. Advanced Patterns
+
+For production-grade systems, see `docs/ADVANCED.md`:
+
+- **Holographic Memory**: Spreading activation across related concepts
+- **Relay Race Protocol**: Multi-agent pipelines with structured handoffs
+- **Circuit Breaker**: Prevent cascading failures
+- **L-Score Provenance**: Track knowledge trustworthiness
+- **Anti-Hallucination**: Detect and prevent AI fabrications
+- **Continuous Learning**: EWC++ to prevent catastrophic forgetting
+
+Related production implementations:
+- [enhanced-memory-mcp](https://github.com/marc-shade/enhanced-memory-mcp)
+- [agent-runtime-mcp](https://github.com/marc-shade/agent-runtime-mcp)
+
 ---
 
 ## Core Concepts

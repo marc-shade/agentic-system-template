@@ -167,6 +167,42 @@ Goal and task management:
 
 ---
 
+## Production-Only Policy
+
+**All deliverables must be production-ready.**
+
+### Forbidden
+- ❌ POCs or "proof of concept"
+- ❌ "Simple" or "demo" versions
+- ❌ Mock data or placeholders
+- ❌ Fake UI elements
+- ❌ Incomplete implementations
+- ❌ "We can add this later"
+
+### Required
+- ✅ Production-ready code
+- ✅ Complete implementations
+- ✅ Real integrations (no mocks)
+- ✅ Proper error handling
+- ✅ Live data only
+
+**Rule**: If you build something incomplete, you must finish it before presenting.
+
+---
+
+## Advanced Patterns
+
+For production-grade systems, see `docs/ADVANCED.md`:
+
+- **Holographic Memory**: Spreading activation across related concepts
+- **Relay Race Protocol**: 48-agent pipelines with structured handoffs
+- **Circuit Breaker**: Prevent cascading failures
+- **L-Score Provenance**: Track knowledge trustworthiness
+- **Anti-Hallucination**: Detect and prevent fabrications
+- **Continuous Learning**: EWC++ to prevent forgetting
+
+---
+
 ## Project Structure
 
 ```
